@@ -79,8 +79,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    This is the <strong>About page</strong>.
+                    <strong>About</strong> {{ $data['fullname'] }}.
                 </div>
+                <p>Email me at <a href="mailto:{{ $data['email'] }}">{{ $data['email'] }}</a></p>
             </div>
         </div>
     </body>
