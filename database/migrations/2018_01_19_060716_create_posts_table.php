@@ -15,11 +15,13 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->sting('title');
+            $table->string('title');
             $table->text('body');
             $table->timestamps();
-            $table->string('author')->nullable()->after('title');
+            $table->string('author')->nullable();
         });
+
+
     }
 
     /**
