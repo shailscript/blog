@@ -5,7 +5,8 @@
         <div class="col-md-8 col-md-offset-2">
           <h1>Create Blog Post</h1>
           <hr></hr>
-          <form class="form" action="{{  route('posts.store') }}" {{ csrf_field() }} method="post">
+          <form class="form" action="{{  route('posts.store') }}" method="post">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <label  for="title">Title:</label>
             <input type="text" name="title" value="">
             <label for="body">Post body</label>
