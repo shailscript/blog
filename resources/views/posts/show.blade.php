@@ -19,7 +19,12 @@
           <a href="{{ route('posts.edit', ['post' => $showPost->id]) }}" class="btn btn-primary btn-block">Edit</a>
         </div>
         <div class="col-sm-6">
-          <a href="{{ route('posts.destroy', ['post' => $showPost->id]) }}" class="btn btn-danger btn-block">Delete</a>
+          <form class="form" action="{{ route('posts.destroy', ['id'=> $showPost->id] ) }}" method="post">
+            {{ method_field('DELETE') }}
+            {{ csrf_field() }}
+              <button type="submit" class="btn btn-danger btn-block">Delete</button>
+          </form>
+          {{-- <a href="{{ route('posts.destroy', ['post' => $showPost->id]) }}">Delete</a> --}}
         </div>
       </div>
     </div>

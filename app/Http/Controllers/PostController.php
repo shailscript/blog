@@ -113,6 +113,13 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //find the particular post and tore it in a variable
+        $post = Post::find($id);
+        //call delete(eloquent) for that variable
+        $post->delete();
+        //set flash message
+        Session::flash('Success', 'The post was deleted successfully!');
+        //redirect user to index
+        return redirect()->route('posts.index');
     }
 }
