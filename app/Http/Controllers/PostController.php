@@ -14,7 +14,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        //extract all posts from the db in a variable here
+        //pass it on to the corresponding View
+        $allPosts = Post::all();
+        return view('posts.index')->with( 'allPosts' ,$allPosts);
     }
 
     /**
