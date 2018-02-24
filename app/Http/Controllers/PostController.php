@@ -16,7 +16,7 @@ class PostController extends Controller
     {
         //extract all posts from the db in a variable here
         //pass it on to the corresponding View
-        $allPosts = Post::all();
+        $allPosts = Post::paginate(10);
         return view('posts.index')->with( 'allPosts' ,$allPosts);
     }
 
