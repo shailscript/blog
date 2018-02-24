@@ -46,7 +46,7 @@ class PostController extends Controller
       $postInstance->body = $request->body;
       $postInstance->save();
 
-      Session::flash('success', 'the blog post was successfully saved!');
+      Session::flash('success', 'The blog post was successfully saved!');
       // redirect to another page
       return redirect()->route('posts.show', $postInstance->id);
     }

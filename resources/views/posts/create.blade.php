@@ -10,7 +10,7 @@
             <label  for="title">Title:</label>
             <input type="text" name="title" value="">
             <label for="body">Post body</label>
-            <input type="textares" name="body" value="">
+            <input type="textarea" name="body" value="">
             <button class="btn btn-success">Create Post</button>
           </form>
         </div>
