@@ -9,6 +9,8 @@
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <label  for="title">Title:</label>
             <input type="text" name="title" value="">
+            <label  for="slug">Slug:</label>
+            <input type="text" name="slug" value="">
             <label for="body">Post body</label>
             <input type="textarea" name="body" value="">
             <button class="btn btn-success">Create Post</button>

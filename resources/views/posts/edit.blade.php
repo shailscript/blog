@@ -11,12 +11,16 @@
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
           <label  for="title">Title:</label>
           <input class="from-control input-lg" type="text" name="title" value="{{ $post->title }}">
+          <label  for="title">Slug:</label>
+          <input class="from-control" type="text" name="slug" value="{{ $post->slug }}">
           <label for="body">Post body</label>
           <input class="form-control" type="textarea" name="body" value=" {{ $post->body }}">
         </div>
         <div class="col-md-4">
           <div class="well">
             <dl class="dl-horizontal">
+              <dt>Url :</dt>
+              <dd><a href="{{ url($post->slug) }}">{{ url($post->slug) }}</a></dd>
               <dt>Created At :</dt>
               <dd>{{ date('M j, Y h:i A', strtotime($post->created_at)) }}</dd>
               <dt>Updated At :</dt>
