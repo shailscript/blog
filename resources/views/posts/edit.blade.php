@@ -20,7 +20,7 @@
           <div class="well">
             <dl class="dl-horizontal">
               <dt>Url :</dt>
-              <dd><a href="{{ url($post->slug) }}">{{ url($post->slug) }}</a></dd>
+              <dd><a href="{{ route('blog.single', ['slug'=> $post->slug]) }}">{{ route('blog.single', ['slug'=> $post->slug]) }}</a></dd>
               <dt>Created At :</dt>
               <dd>{{ date('M j, Y h:i A', strtotime($post->created_at)) }}</dd>
               <dt>Updated At :</dt>
