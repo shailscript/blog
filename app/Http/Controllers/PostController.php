@@ -41,11 +41,13 @@ class PostController extends Controller
       // validate the request
         $this->validate($request, array(
           'title' => 'required|max:255',
+          'slug' => 'required|alpha_dash|min:5|max:255|unique:posts,slug',
           'body' => 'required'
       ));
       // store it in the db
       $postInstance = new Post; //instance of the model post (post.php)
       $postInstance->title = $request->title;
+      $postInstance->slug = $request->slug;
       $postInstance->body = $request->body;
       $postInstance->save();
 
@@ -92,11 +94,13 @@ class PostController extends Controller
         //validate
         $this->validate($request, array(
           'title' => 'required|max:255',
+          'slug' => 'required|alpha_dash|min:5|max:255|unique:posts,slug',
           'body' => 'required'
        ));
         //save
         $post = Post::find($id);
         $post->title = $request->input('title');
+        $post->slug = $request->input('slug');
         $post->body = $request->input('body');
         $post->save();
         //set flash
