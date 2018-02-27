@@ -11,11 +11,18 @@
 |
 */
 Route::group(['middleware' => ['web']], function(){
+  //auth routes
+  Route::get('auth/login', 'Auth/LoginController@getLogin');
+  Route::post('auth/login', 'Auth/LoginController@postLogin');
+  Route::get('auth/logout', 'Auth/LoginController@getLogout');
+  //registration routes
+  Route::get('auth/register', 'Auth/RegisterController@getRegister');
+  Route::post('auth/register', 'Auth/RegisterController@getRegister');
+
   Route::get('blog/{slug}',['as' => 'blog.single', 'uses'=>'BlogController@getSingle'])->where('slug', '[\w\d\-\_]+');
   Route::get('blog', ['as'=>'blog.index' , 'uses'=>'BlogController@getIndex']);
   Route::get('/', 'PagesController@getIndex');
   Route::get('/about', 'PagesController@getAbout');
   Route::get('/contact', 'PagesController@getContact');
-
   Route::resource('/posts', 'PostController');
 });
