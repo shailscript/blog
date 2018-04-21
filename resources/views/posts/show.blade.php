@@ -17,10 +17,10 @@
         <dd>{{ date('M j,Y h:i A', strtotime($showPost->updated_at) )}}</dd>
       </dl>
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col">
           <a href="{{ route('posts.edit', ['post' => $showPost->id]) }}" class="btn btn-primary btn-block">Edit</a>
         </div>
-        <div class="col-sm-6">
+        <div class="col">
           <form class="form" action="{{ route('posts.destroy', ['id'=> $showPost->id] ) }}" method="post">
             {{ method_field('DELETE') }}
             {{ csrf_field() }}
