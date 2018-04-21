@@ -2,7 +2,7 @@
   @section('title', '| Contact')
   @section('content')
       <div class="row">
-        <div class="col-md-12">
+        <div class="col">
           <h1>Contact us</h1>
           <hr>
           <form class="form">
@@ -16,10 +16,11 @@
             </div>
             <div class="form-group">
               <label name="message">Email :</label>
-              <textbox id="message" class="form-control" type="text" name="message" value="">
+              <textarea id="message" class="form-control" type="text" name="message" value="" rows="3"></textarea>
             </div>
-            <input type="button" name="submit" value="Send Message" class="btn btn-success">
+            <input type="button" name="submit" value="Send Message" class="btn btn-success btn-lg btn-block">
           </form>
+          <br><br>
         </div>
       </div>
   @endsection
