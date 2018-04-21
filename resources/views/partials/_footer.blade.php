@@ -1,1 +1,1 @@
-<p class="text-center">&copy Shailendra Shukla</p>
+<p class="text-center">&copy TutorPad</p>
